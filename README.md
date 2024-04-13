@@ -7,6 +7,13 @@
 - **Remove Items from Cart**: Users can view their cart and choose to remove any items already present in their carts.
 - **Design**: The sleek and minimal design provides an enriching and hassle-free experience for the user.
 
+## Screenshots
+![Sidebar]("./screenshots/sidebar.jpg")
+
+![Shop Page]("./screenshots/shop_page.jpg")
+
+![Cart Page]("./screenshots/cart_page.jpg")
+
 ## How to Use
 
 1. **Clone Repository**: Clone this repository to your local machine.
