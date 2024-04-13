@@ -8,9 +8,11 @@
 - **Design**: The sleek and minimal design provides an enriching and hassle-free experience for the user.
 
 ## Screenshots
-<img src="./screenshots/sidebar.jpg" alt="Sidebar" style="width:30%;"/>
-<img src="./screenshots/shop_page.jpg" alt="Shop Page" style="width:30%;"/>
-<img src="./screenshots/cart.jpg" alt="Cart" style="width:30%;"/>
+<div style="display:flex; justify-content:space-evenly; align-items=center;">
+    <img src="./screenshots/sidebar.jpg" alt="Sidebar" style="width:30%;"/>
+    <img src="./screenshots/shop_page.jpg" alt="Shop Page" style="width:30%;"/>
+    <img src="./screenshots/cart.jpg" alt="Cart" style="width:30%;"/>
+</div>
 
 ## How to Use
 
