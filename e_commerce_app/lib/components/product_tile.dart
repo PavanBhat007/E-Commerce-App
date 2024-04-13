@@ -16,7 +16,7 @@ class ProductTile extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) =>
-          AlertDialog(content: Text("Add this item to cart?"), actions: [
+          AlertDialog(content: const Text("Add this item to cart?"), actions: [
         // cancel button
         MaterialButton(
           onPressed: () => Navigator.pop(context),
@@ -38,79 +38,80 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        margin: const EdgeInsets.all(10),
-        padding: const EdgeInsets.all(25),
-        width: 300,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                // product image
-                AspectRatio(
-                  aspectRatio: 1,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondary,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(25),
-                    child: const Icon(Icons.favorite),
-                  ),
-                ),
-
-                const SizedBox(height: 25),
-
-                // product name
-                Text(
-                  product.name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-
-                const SizedBox(height: 25),
-
-                // product description
-                Text(
-                  product.description,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 25),
-
-            // product price & add to cart
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // PRICE
-                Text('\$' + product.price.toStringAsFixed(2)),
-
-                // ADD TO CART BUTTON
-                Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primary,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(25),
+      width: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              // product image
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: IconButton(
-                    onPressed: () => addToCart(context),
-                    icon: Icon(Icons.add),
-                  ),
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(25),
+                  child: Image.asset(product.imagePath),
                 ),
-              ],
-            ),
-          ],
-        ));
+              ),
+
+              const SizedBox(height: 25),
+
+              // product name
+              Text(
+                product.name,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+
+              const SizedBox(height: 25),
+
+              // product description
+              Text(
+                product.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 25),
+
+          // product price & add to cart
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // PRICE
+              Text('\$${product.price.toStringAsFixed(2)}'),
+
+              // ADD TO CART BUTTON
+              Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.primary,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: IconButton(
+                  onPressed: () => addToCart(context),
+                  icon: const Icon(Icons.add),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
