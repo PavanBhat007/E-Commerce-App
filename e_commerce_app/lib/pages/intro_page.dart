@@ -9,42 +9,57 @@ class IntroPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // LOGO
-          Icon(
-            Icons.shopping_bag, 
-            size: 72, 
-            color: Theme.of(context).colorScheme.inversePrimary,
+          Column(
+            children: [
+              Icon(
+                Icons.shopping_bag, 
+                size: 72, 
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+              
+              const SizedBox(height: 25),
+              
+              // TITLE
+              const Text(
+                "Minimal Shop",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                )
+              ),
+              
+              const SizedBox(height: 25),
+              
+              // SUBTITLE
+              Text(
+                "Premium Quality Products",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                ),
+              ),
+              
+              const SizedBox(height: 25),
+              
+              // BUTTON
+              MyButton(
+                onTap: () => Navigator.pushNamed(context, '/shop_page'), 
+                child: const Icon(Icons.arrow_forward),
+              ),
+            ],
           ),
 
-          const SizedBox(height: 25),
-
-          // TITLE
-          const Text(
-            "Minimal Shop",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            )
-          ),
-
-          const SizedBox(height: 25),
-
-          // SUBTITLE
-          Text(
-            "Premium Quality Products",
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.inversePrimary,
+          // FOOTER
+          const Padding(
+            padding: EdgeInsets.only(bottom: 25.0),
+            child: Center(
+              child: Text(
+                "Dayananda Sagar University, CSE Department"
+              ),
             ),
           ),
-
-          const SizedBox(height: 25),
-
-          // BUTTON
-          MyButton(
-            onTap: () => Navigator.pushNamed(context, '/shop_page'), 
-            child: const Icon(Icons.arrow_forward),
-          )
         ],
       ),
     );
